@@ -5,14 +5,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.hadoop.fs.FileStatus;
+import org.apache.hadoop.io.ArrayWritable;
+import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.mapreduce.Cluster;
 //import org.apache.hadoop.mapreduce.ClusterMetrics;
 import org.apache.hadoop.mapreduce.InputSplit;
 import org.apache.hadoop.mapreduce.JobContext;
+import org.apache.hadoop.mapreduce.RecordReader;
+import org.apache.hadoop.mapreduce.TaskAttemptContext;
 import org.apache.hadoop.mapreduce.TaskTrackerInfo;
-import org.apache.hadoop.mapreduce.lib.input.SequenceFileInputFormat;
+import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
+import org.apache.hadoop.mapreduce.lib.input.FileSplit;
 
-public class ReadFileEInputFormat<K,V> extends SequenceFileInputFormat<K,V>{
+
+public class ReadFileEInputFormat extends FileInputFormat<LongWritable,ArrayWritable>{
 	
 	@Override
 	public List<InputSplit> getSplits(JobContext job) throws IOException{
@@ -27,10 +33,17 @@ public class ReadFileEInputFormat<K,V> extends SequenceFileInputFormat<K,V>{
 		
 		List<InputSplit> split = new ArrayList<>();
 		List<FileStatus> files = this.listStatus(job);
+		int currentServer = 0;
+		for(FileStatus file: files){
+			//assign each single file into a single server
+			split.add(new FileSplit(file.getPath(), 0, file.getLen(), 
+					new String[]{servers[currentServer].getTaskTrackerName()}));
+			currentServer = getNextServer(currentServer, servers.length);
+		}
 		
 		
 		
-		return null;
+		return split;
 		
 	}
 	
@@ -51,6 +64,13 @@ public class ReadFileEInputFormat<K,V> extends SequenceFileInputFormat<K,V>{
 			current = 0;
 		}
 		return current;
+	}
+
+	@Override
+	public RecordReader<LongWritable,ArrayWritable> createRecordReader(InputSplit arg0,
+			TaskAttemptContext arg1) throws IOException, InterruptedException {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

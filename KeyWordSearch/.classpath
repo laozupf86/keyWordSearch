@@ -47,16 +47,40 @@
 	<classpathentry kind="lib" path="/Users/haozhouwang/MyUQ/hadoop/lib/hadoop-annotations-0.23.10.jar"/>
 	<classpathentry kind="lib" path="/Users/haozhouwang/MyUQ/hadoop/lib/hadoop-auth-0.23.10.jar"/>
 	<classpathentry kind="lib" path="/Users/haozhouwang/MyUQ/hadoop/lib/hadoop-common-0.23.10-sources.jar"/>
-	<classpathentry kind="lib" path="/Users/haozhouwang/MyUQ/hadoop/lib/hadoop-common-0.23.10.jar"/>
+	<classpathentry kind="lib" path="/Users/haozhouwang/MyUQ/hadoop/lib/hadoop-common-0.23.10.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="http://hadoop.apache.org/docs/r2.3.0/api/"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="lib" path="/Users/haozhouwang/MyUQ/hadoop/lib/hadoop-hdfs-0.23.10-sources.jar"/>
-	<classpathentry kind="lib" path="/Users/haozhouwang/MyUQ/hadoop/lib/hadoop-hdfs-0.23.10.jar"/>
+	<classpathentry kind="lib" path="/Users/haozhouwang/MyUQ/hadoop/lib/hadoop-hdfs-0.23.10.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="http://hadoop.apache.org/docs/r2.3.0/api/"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="lib" path="/Users/haozhouwang/MyUQ/hadoop/lib/hadoop-mapreduce-client-app-0.23.10.jar"/>
-	<classpathentry kind="lib" path="/Users/haozhouwang/MyUQ/hadoop/lib/hadoop-mapreduce-client-common-0.23.10.jar"/>
-	<classpathentry kind="lib" path="/Users/haozhouwang/MyUQ/hadoop/lib/hadoop-mapreduce-client-core-0.23.10.jar"/>
-	<classpathentry kind="lib" path="/Users/haozhouwang/MyUQ/hadoop/lib/hadoop-mapreduce-client-hs-0.23.10.jar"/>
+	<classpathentry kind="lib" path="/Users/haozhouwang/MyUQ/hadoop/lib/hadoop-mapreduce-client-common-0.23.10.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="http://hadoop.apache.org/docs/r2.3.0/api/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/Users/haozhouwang/MyUQ/hadoop/lib/hadoop-mapreduce-client-core-0.23.10.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="http://hadoop.apache.org/docs/r2.3.0/api/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/Users/haozhouwang/MyUQ/hadoop/lib/hadoop-mapreduce-client-hs-0.23.10.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="http://hadoop.apache.org/docs/r2.3.0/api/"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="lib" path="/Users/haozhouwang/MyUQ/hadoop/lib/hadoop-mapreduce-client-hs-plugins-0.23.10.jar"/>
 	<classpathentry kind="lib" path="/Users/haozhouwang/MyUQ/hadoop/lib/hadoop-mapreduce-client-jobclient-0.23.10.jar"/>
-	<classpathentry kind="lib" path="/Users/haozhouwang/MyUQ/hadoop/lib/hadoop-mapreduce-client-shuffle-0.23.10.jar"/>
+	<classpathentry kind="lib" path="/Users/haozhouwang/MyUQ/hadoop/lib/hadoop-mapreduce-client-shuffle-0.23.10.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="http://hadoop.apache.org/docs/r2.3.0/api/"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="lib" path="/Users/haozhouwang/MyUQ/hadoop/lib/hadoop-yarn-api-0.23.10.jar"/>
 	<classpathentry kind="lib" path="/Users/haozhouwang/MyUQ/hadoop/lib/hadoop-yarn-applications-distributedshell-0.23.10.jar"/>
 	<classpathentry kind="lib" path="/Users/haozhouwang/MyUQ/hadoop/lib/hadoop-yarn-client-0.23.10.jar"/>
