@@ -20,7 +20,7 @@ public class InvertedIndexReducer extends Reducer<Text, Text, Text, Text>{
 		}
 		Text newValue = new Text();
 		newValue.set(sb.toString());
-		mo.write(key, newValue, key.toString());
+		mo.write("a", key, newValue);
 		
 		
 	}

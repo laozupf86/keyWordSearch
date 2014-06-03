@@ -79,7 +79,7 @@ public class WholeRecordReader extends RecordReader<LongWritable,ArrayWritable>{
 		}
 		
 		if(value == null){
-			value = new ArrayWritable(org.apache.hadoop.io.Text.class);
+			value = new ArrayWritable(Text.class);
 		}
 		
 		if(!processed){
@@ -93,8 +93,11 @@ public class WholeRecordReader extends RecordReader<LongWritable,ArrayWritable>{
 				text.set(line);
 				fileStream.add(text);
 			}
+			System.out.println("start to cast");
 			Text[] texts = new Text[fileStream.size()];
-			value.set(fileStream.toArray(texts));
+			texts = fileStream.toArray(texts);
+			value.set(texts);
+			System.out.println("cast finish");
 			bufferedReader.close();
 			IOUtils.closeStream(in);
 			processed = true;

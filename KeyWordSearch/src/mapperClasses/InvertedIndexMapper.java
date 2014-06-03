@@ -12,7 +12,7 @@ public class InvertedIndexMapper extends Mapper<LongWritable, ArrayWritable, Tex
 	public void map(LongWritable key, ArrayWritable value, Context context) throws IOException, InterruptedException{
 		Text reduceKey = new Text();
 		Text reduceValue = new Text();
-		
+		System.out.println("into map");
 		Text[] texts = (Text[]) value.get();
 		for(Text text : texts){
 			String line = text.toString();
