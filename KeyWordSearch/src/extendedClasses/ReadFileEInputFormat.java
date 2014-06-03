@@ -70,7 +70,7 @@ public class ReadFileEInputFormat extends FileInputFormat<LongWritable,ArrayWrit
 	public RecordReader<LongWritable,ArrayWritable> createRecordReader(InputSplit arg0,
 			TaskAttemptContext arg1) throws IOException, InterruptedException {
 		// TODO Auto-generated method stub
-		return null;
+		return new WholeRecordReader();
 	}
 
 }

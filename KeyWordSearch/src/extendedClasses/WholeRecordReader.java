@@ -93,7 +93,8 @@ public class WholeRecordReader extends RecordReader<LongWritable,ArrayWritable>{
 				text.set(line);
 				fileStream.add(text);
 			}
-			value.set((Text[]) fileStream.toArray());
+			Text[] texts = new Text[fileStream.size()];
+			value.set(fileStream.toArray(texts));
 			bufferedReader.close();
 			IOUtils.closeStream(in);
 			processed = true;
