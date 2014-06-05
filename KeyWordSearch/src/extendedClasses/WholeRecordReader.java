@@ -62,6 +62,10 @@ public class WholeRecordReader extends RecordReader<LongWritable,ArrayWritable>{
 			throws IOException, InterruptedException {
 		// TODO Auto-generated method stub
 		fileSplit = (FileSplit) arg0;
+		//System.out.println("host name in file is " + fileSplit.)
+		//String hostname = java.net.InetAddress.getLocalHost().getHostName();
+		System.out.println("fileSplit is " + fileSplit.getLocations().length);
+		System.out.println("InputSplit is " + arg0.getLocations().length);
 		Configuration job = arg1.getConfiguration();
 		Path file = fileSplit.getPath();
 		FileSystem temp = file.getFileSystem(job);
@@ -89,6 +93,7 @@ public class WholeRecordReader extends RecordReader<LongWritable,ArrayWritable>{
 			List<Text> fileStream = new ArrayList<>();
 			String line = null;
 			while((line = bufferedReader.readLine()) != null){
+				System.out.println("read file is " + line);
 				Text text = new Text();
 				text.set(line);
 				fileStream.add(text);
