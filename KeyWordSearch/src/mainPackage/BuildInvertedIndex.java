@@ -46,7 +46,7 @@ public class BuildInvertedIndex extends Configured implements Tool{
 		job.setNumReduceTasks(2);
 		job.setOutputKeyClass(Text.class);
 		job.setOutputValueClass(Text.class);
-
+		
 		// MultipleOutputs.addNamedOutput(job, "a", TextOutputFormat.class,
 		// Text.class, Text.class);
 
