@@ -17,6 +17,9 @@ public class SearcherMapper extends Mapper<Text, ArrayWritable, Point, Text>{
 
 	int k = 1;
 	
+	/**
+	 * map the <K1, V1> (<keyword, points>) to <K2, V2> (<pointid, keyword>)
+	 */
 	public void map(Text key, ArrayWritable value, Context context) throws IOException, InterruptedException{
 		
 		Point[] points = (Point[]) value.get();

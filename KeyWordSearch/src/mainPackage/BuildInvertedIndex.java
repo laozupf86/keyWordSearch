@@ -50,7 +50,8 @@ public class BuildInvertedIndex extends Configured implements Tool{
 		// MultipleOutputs.addNamedOutput(job, "a", TextOutputFormat.class,
 		// Text.class, Text.class);
 
-		FileInputFormat.addInputPath(job, new Path(arg0[0]));
+		//FileInputFormat.addInputPath(job, new Path(arg0[0]));
+		FileInputFormat.setInputPaths(job, new Path(arg0[0]));
 		FileOutputFormat.setOutputPath(job, new Path(arg0[1]));
 		return job.waitForCompletion(true) ? 0 : 1;
 	}

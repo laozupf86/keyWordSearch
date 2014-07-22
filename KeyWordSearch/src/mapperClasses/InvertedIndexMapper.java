@@ -19,6 +19,7 @@ public class InvertedIndexMapper extends Mapper<LongWritable, ArrayWritable, Tex
 		Text[] texts = (Text[]) value.get();
 		String hostname = java.net.InetAddress.getLocalHost().getHostName();
 		System.out.println("host name is " + hostname);
+		//split the point and keywords
 		for(Text text : texts){
 			String line = text.toString();
 			String parts[] = line.split("@");

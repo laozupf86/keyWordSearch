@@ -72,9 +72,11 @@ public class IndexedFileRecordReader extends RecordReader<Text,ArrayWritable>{
 		
 	}
 
+	/**
+	 * get the key-value pairs from hadoop generated file directly
+	 */
 	@Override
 	public boolean nextKeyValue() throws IOException, InterruptedException {
-		// TODO Auto-generated method stub
 		if(key == null){
 			key = new Text();
 			//key.set(1L);
@@ -91,12 +93,15 @@ public class IndexedFileRecordReader extends RecordReader<Text,ArrayWritable>{
 			List<Point> fileStream = new ArrayList<>();
 			String line = null;
 			line = bufferedReader.readLine();
+			//split by tab
 			String[] firstWord = line.split("//t");
 			key.set(firstWord[0]);
+			//get the key of each line
 			String[] pointLine = firstWord[1].split(",");
 			Point point = new Point(Integer.parseInt(pointLine[0]), Float.parseFloat(pointLine[1]),
 					Float.parseFloat(pointLine[2]));
 			fileStream.add(point);
+			//read the rest points from file
 			while((line = bufferedReader.readLine()) != null){
 				System.out.println("read file is " + line);
 				pointLine = line.split(",");

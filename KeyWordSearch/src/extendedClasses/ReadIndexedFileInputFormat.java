@@ -95,7 +95,7 @@ public class ReadIndexedFileInputFormat extends FileInputFormat<Text,ArrayWritab
 			InputSplit arg0, TaskAttemptContext arg1) throws IOException,
 			InterruptedException {
 		// TODO Auto-generated method stub
-		return null;
+		return new IndexedFileRecordReader();
 	}
 
 }

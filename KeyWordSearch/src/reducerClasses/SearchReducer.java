@@ -29,6 +29,14 @@ public class SearchReducer extends Reducer<Point, Text, Point, DoubleWritable>{
 	public Point queryPoint = null;
 	public DoubleWritable distanceToWrite = new DoubleWritable();
 	
+	/**
+	 * 
+	 * @param point POI
+	 * @param values keywords
+	 * @param context
+	 * @throws IOException
+	 * @throws InterruptedException
+	 */
 	public void reduce(Point point, Iterable<ArrayWritable> values, Context context) throws IOException, InterruptedException{
 		
 		//List<Text> pointKeyWords = new ArrayList<>();
@@ -43,8 +51,10 @@ public class SearchReducer extends Reducer<Point, Text, Point, DoubleWritable>{
 		}
 		double distance = DistanceCalculation.calculateDistance(queryPoint, point);
 		if(distance < bestSoFarDistance){
+			bestSoFarDistance = distance;
 			distanceToWrite.set(distance);
 			context.write(point, distanceToWrite);
+			
 		}
 		
 		
