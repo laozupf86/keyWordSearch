@@ -38,7 +38,7 @@ public class BuildInvertedIndex extends Configured implements Tool{
 
 		job.setMapperClass(InvertedIndexMapper.class);
 
-		job.setPartitionerClass(TestP.class);
+		//job.setPartitionerClass(TestP.class);
 
 		// job.setCombinerClass(InvertedIndexReducer.class);
 		job.setReducerClass(InvertedIndexReducer.class);

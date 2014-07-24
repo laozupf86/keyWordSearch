@@ -39,20 +39,21 @@ public class DataGenerator {
 	}
 	
 	public static void main(String[] args) throws IOException {
-		//String path = "";
+		String path = "/Users/haozhouwang/Dropbox/MyUQ/project data/hadoop/3.txt";
 		DataGenerator dg = new DataGenerator();
-		//File file = new File(path);
-		//BufferedWriter out = new BufferedWriter
-			//	(new OutputStreamWriter
-				//		(new FileOutputStream(file,true), "utf-8"));
+		File file = new File(path);
+		BufferedWriter out = new BufferedWriter
+				(new OutputStreamWriter
+						(new FileOutputStream(file,true), "utf-8"));
 		
-		int numberOfPoint = 100;
+		int numberOfPoint = 9000;
 		
 		for(int i = 0; i < numberOfPoint; i++){
-			System.out.println((dg.getRandomPoint(i).toString() + "#" + dg.getRandomKeyWord()));
+			out.write(dg.getRandomPoint(i).toString() + "#" + dg.getRandomKeyWord());
+			out.newLine();
 		}
-		//out.flush();
-		//out.close();
+		out.flush();
+		out.close();
 		
 		
 		
